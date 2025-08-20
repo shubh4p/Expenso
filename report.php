@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports | Expenso</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-blue-gray-50 text-gray-800 min-h-screen">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-green-700">Expenso</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="home.php" class="hover:text-green-600">Home</a>
+        <a href="dashboard.php" class="hover:text-green-600">Dashboard</a>
+        <a href="add_expence.php" class="hover:text-green-600">Add Expense</a>
+        <a href="report.php" class="hover:text-green-600 font-semibold">Reports</a>
+        <a href="profile.php" class="hover:text-green-600">Profile</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24 px-4 pb-10 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-green-700 mb-8 text-center">Expense Reports</h2>
+
+    <!-- Filter Controls -->
+    <div class="bg-white p-6 rounded-xl shadow mb-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+      <input type="date" class="border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="From">
+      <input type="date" class="border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="To">
+      <select class="border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+        <option>All Categories</option>
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Shopping</option>
+        <option>Rent</option>
+      </select>
+      <select class="border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+        <option>All Methods</option>
+        <option>Cash</option>
+        <option>Card</option>
+        <option>UPI</option>
+        <option>Bank Transfer</option>
+      </select>
+      <button class="md:col-span-4 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition mt-2">Filter</button>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="text-sm text-gray-500">Total Expenses</p>
+        <h3 class="text-2xl font-bold text-green-700">₹12,450</h3>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="text-sm text-gray-500">Transactions</p>
+        <h3 class="text-2xl font-bold text-green-700">25</h3>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <p class="text-sm text-gray-500">Top Category</p>
+        <h3 class="text-2xl font-bold text-green-700">Food</h3>
+      </div>
+    </div>
+
+    <!-- Chart Placeholder -->
+    <div class="bg-white p-6 rounded-xl shadow mb-8">
+      <h4 class="text-lg font-semibold text-gray-700 mb-4">Category-wise Spending</h4>
+      <div class="h-64 flex items-center justify-center bg-blue-gray-100 rounded-lg">
+        <span class="text-gray-500">[Chart Placeholder]</span>
+      </div>
+    </div>
+
+    <!-- Expenses Table -->
+    <div class="bg-white p-6 rounded-xl shadow mb-8 overflow-x-auto">
+      <h4 class="text-lg font-semibold text-gray-700 mb-4">Recent Expenses</h4>
+      <table class="min-w-full table-auto">
+        <thead>
+          <tr class="bg-green-100 text-left">
+            <th class="px-4 py-2">Date</th>
+            <th class="px-4 py-2">Title</th>
+            <th class="px-4 py-2">Category</th>
+            <th class="px-4 py-2">Amount</th>
+            <th class="px-4 py-2">Payment Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b">
+            <td class="px-4 py-2">2025-07-05</td>
+            <td class="px-4 py-2">Grocery Shopping</td>
+            <td class="px-4 py-2">Food</td>
+            <td class="px-4 py-2">₹1,200</td>
+            <td class="px-4 py-2">UPI</td>
+          </tr>
+          <tr class="border-b">
+            <td class="px-4 py-2">2025-07-03</td>
+            <td class="px-4 py-2">Cab to Office</td>
+            <td class="px-4 py-2">Travel</td>
+            <td class="px-4 py-2">₹350</td>
+            <td class="px-4 py-2">Cash</td>
+          </tr>
+          <!-- More rows... -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Export Buttons -->
+    <div class="flex gap-4 justify-end">
+      <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">Download CSV</button>
+      <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">Print Report</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2025 Expenso. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Expenso</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-blue-gray-50 text-gray-800 min-h-screen">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-green-700">Expenso</h1>
+      <nav class="hidden md:flex space-x-6 items-center">
+        <a href="home.php" class="hover:text-green-600">Home</a>
+        <a href="dashboard.php" class="hover:text-green-600">Dashboard</a>
+        <a href="add_expence.php" class="hover:text-green-600">Add Expense</a>
+        <a href="report.php" class="hover:text-green-600">Reports</a>
+        <a href="profile.php" class="hover:text-green-600 font-semibold">Profile</a>
+        <a href="logout.php" class="ml-4 px-3 py-1 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24 px-4 pb-10 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-green-700 mb-8 text-center">My Profile</h2>
+
+    <div class="bg-white rounded-xl shadow-md p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Profile Info -->
+      <div class="flex flex-col items-center text-center">
+        <div class="relative w-28 h-28 mb-4">
+          <img id="profileImage" src="https://via.placeholder.com/120" alt="Profile Picture" class="w-full h-full rounded-full object-cover border-4 border-green-600">
+          <label for="profileUpload" class="absolute bottom-0 right-0 bg-green-600 text-white text-xs px-2 py-1 rounded-full shadow cursor-pointer hover:bg-green-700 transition">
+            Change
+          </label>
+          <input type="file" id="profileUpload" name="profileUpload" accept="image/*" class="hidden" onchange="previewProfileImage(event)">
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800">John Doe</h3>
+        <span class="text-green-600 mt-1 text-sm">Premium User</span>
+      </div>
+
+      <!-- Profile Edit Form -->
+      <form class="space-y-4">
+        <div>
+          <label class="block text-gray-700 font-medium mb-1" for="email">Email</label>
+          <input type="email" id="email" name="email" value="john@example.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-1" for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" value="+91 9876543210" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-1" for="city">City</label>
+          <input type="text" id="city" name="city" value="Mumbai" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+        </div>
+        <div class="flex gap-4">
+          <div class="w-1/2">
+            <label class="block text-gray-700 font-medium mb-1" for="age">Age</label>
+            <input type="number" id="age" name="age" value="28" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+          </div>
+          <div class="w-1/2">
+            <label class="block text-gray-700 font-medium mb-1" for="gender">Gender</label>
+            <select id="gender" name="gender" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-1" for="blood">Blood Group</label>
+          <select id="blood" name="blood" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option>A+</option>
+            <option>B+</option>
+            <option>O+</option>
+            <option>AB+</option>
+            <option>A-</option>
+            <option>B-</option>
+            <option>O-</option>
+            <option>AB-</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 font-semibold transition">
+          Update Profile
+        </button>
+        <p class="text-center text-sm mt-2">
+          <a href="update_pass.php" class="text-blue-600 hover:underline">Change Password</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2025 Expenso. All rights reserved.
+  </footer>
+
+  <script>
+    function previewProfileImage(event) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const output = document.getElementById('profileImage');
+        output.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+
+</body>
+</html>
