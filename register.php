@@ -84,9 +84,10 @@
     <!-- Login Link -->
     <p class="text-sm text-center text-gray-600 mt-6">
       Already have an account?
-      <a href="login.php" class="text-green-600 hover:underline">Login here</a>
+      <a href="index.html" class="text-green-600 hover:underline">Login here</a>
     </p>
   </div>
 
 </body>
 </html>
+
