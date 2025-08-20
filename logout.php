@@ -6,7 +6,8 @@ if(isset($_SESSION['user']))
     //session_destroy();
     if(!isset($_SESSION['user']));
     {
-        header("location:login.php");
+        header("location:index.html");
     }
 }
+
 ?>
